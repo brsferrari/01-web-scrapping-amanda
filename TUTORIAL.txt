@@ -1,0 +1,127 @@
+============================================================
+  CONSULTA TRIBUTARIA - PROCESSADOR DE EAN
+  Tutorial de Uso
+============================================================
+
+REQUISITOS
+----------
+- Windows 10 ou superior
+- Navegador Brave ou Google Chrome instalado
+- Conta ativa no portal: https://portal.consultatributaria.com.br
+
+
+------------------------------------------------------------
+CONFIGURACAO INICIAL (apenas na primeira vez)
+------------------------------------------------------------
+
+1. Abra o arquivo ".env" com o Bloco de Notas.
+
+2. Preencha o campo BROWSER_PATH com o caminho completo
+   do seu navegador. Exemplos:
+
+   Brave:
+   BROWSER_PATH=C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe
+
+   Chrome:
+   BROWSER_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
+
+3. Salve e feche o arquivo ".env".
+
+   IMPORTANTE: o arquivo ".env" deve estar na mesma pasta
+   que o "ConsultaTributaria.exe".
+
+
+------------------------------------------------------------
+COMO USAR O PROGRAMA
+------------------------------------------------------------
+
+PASSO 1 - Abrir o programa
+   Dê dois cliques em "ConsultaTributaria.exe".
+
+PASSO 2 - Selecionar a planilha
+   Clique em "Selecionar Planilha" e escolha o arquivo .xlsx.
+   A planilha deve ter uma coluna chamada "BAR_CODE"
+   com os codigos EAN dos produtos.
+
+PASSO 3 - Abrir o portal
+   Clique em "1. Abrir Portal".
+   O navegador abrira automaticamente.
+
+PASSO 4 - Fazer login
+   No navegador que abriu, faca login com seu usuario
+   e senha do portal Consulta Tributaria.
+   Aguarde carregar a pagina inicial do portal.
+
+PASSO 5 - Iniciar o processamento
+   De volta ao programa, clique em "2. Iniciar Programa".
+   O programa consultara cada EAN automaticamente.
+
+PASSO 6 - Acompanhar o progresso
+   A barra de progresso e o log mostram o andamento.
+   Voce vera quantos produtos foram encontrados e quantos
+   nao estao na base de dados.
+
+PASSO 7 - Resultado
+   Quando concluir, a planilha original sera salva com
+   tres novas colunas:
+   - NOMEECOMMERCE  (nome do produto)
+   - FICHA TECNICA  (descricao tecnica)
+   - IMAGEM         (link da imagem do produto)
+
+
+------------------------------------------------------------
+OPCAO: BAIXAR IMAGENS LOCALMENTE
+------------------------------------------------------------
+
+Marque a opcao "Baixar imagens para pasta local" antes
+de iniciar o processamento.
+
+As imagens serao salvas em uma pasta chamada "imagens/"
+dentro da mesma pasta da sua planilha, nomeadas pelo EAN:
+
+  Exemplo:
+  Planilha: C:\Trabalho\tabela.xlsx
+  Imagens:  C:\Trabalho\imagens\7891134001932.jpg
+                                7898422746827.jpg
+                                ...
+
+
+------------------------------------------------------------
+INSPECIONAR UM EAN ESPECIFICO
+------------------------------------------------------------
+
+Para ver todas as informacoes de um produto especifico:
+1. Certifique-se de estar logado no portal
+2. Digite o EAN no campo "Inspecionar EAN"
+3. Clique em "Inspecionar EAN"
+4. O resultado completo aparecera no Log
+
+
+------------------------------------------------------------
+PROBLEMAS COMUNS
+------------------------------------------------------------
+
+Problema: "Token nao encontrado"
+Solucao:  Faca login no portal antes de clicar em
+          "Iniciar Programa". A sessao pode ter expirado.
+
+Problema: Muitos erros no log
+Solucao:  Espere alguns minutos e tente novamente.
+          O portal pode estar sobrecarregado.
+
+Problema: O navegador nao abre
+Solucao:  Verifique se o caminho no arquivo ".env"
+          esta correto e o navegador esta instalado.
+
+Problema: "Coluna BAR_CODE nao encontrada"
+Solucao:  Sua planilha precisa ter uma coluna com o
+          nome exato "BAR_CODE" (maiusculas).
+
+
+------------------------------------------------------------
+SUPORTE
+------------------------------------------------------------
+
+Em caso de duvidas, entre em contato com o desenvolvedor.
+
+============================================================
